@@ -1,5 +1,5 @@
 // Sleepover service worker — minimal offline shell + runtime caches
-const VERSION = "v1";
+const VERSION = "v2";
 const SHELL_CACHE = `sleepover-shell-${VERSION}`;
 const RUNTIME_CACHE = `sleepover-runtime-${VERSION}`;
 
@@ -19,8 +19,15 @@ self.addEventListener("install", (event) => {
     caches
       .open(SHELL_CACHE)
       .then((c) => c.addAll(SHELL_ASSETS).catch(() => {}))
-      .then(() => self.skipWaiting())
+    // Don't auto-skipWaiting; let the app prompt the user to apply the update.
   );
+});
+
+// Allow the page to ask the waiting worker to activate.
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
 });
 
 self.addEventListener("activate", (event) => {
