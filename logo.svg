@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Sleepover logo">
+  <rect width="512" height="512" rx="112" fill="#2c7273"/>
+  <!-- Crescent moon (sleep) -->
+  <path d="M340 130a78 78 0 1 0 42 42 60 60 0 0 1-42-42z" fill="#f7f3ec"/>
+  <!-- Suitcase body -->
+  <rect x="100" y="240" width="312" height="170" rx="28" fill="none" stroke="#f7f3ec" stroke-width="22"/>
+  <!-- Handle -->
+  <path d="M210 240v-30a46 46 0 0 1 92 0v30" fill="none" stroke="#f7f3ec" stroke-width="22" stroke-linecap="round"/>
+  <!-- Latch dot -->
+  <circle cx="256" cy="325" r="14" fill="#f7f3ec"/>
+</svg>
