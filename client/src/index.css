@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────────────────────
+   Travel Planner — Warm, hospitable iOS palette
+   Soft sand surfaces, muted teal accent.
+   ────────────────────────────────────────────────────────────── */
+
+:root {
+  --button-outline: rgba(40, 30, 15, 0.08);
+  --badge-outline: rgba(40, 30, 15, 0.05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(40, 30, 15, 0.04);
+  --elevate-2: rgba(40, 30, 15, 0.08);
+
+  /* Surfaces — warm sand / cream */
+  --background: 38 30% 96%;          /* #f7f3ec */
+  --foreground: 30 18% 14%;          /* near-black warm */
+  --border: 36 18% 87%;
+  --card: 40 35% 98%;                /* #fbf8f3 */
+  --card-foreground: 30 18% 14%;
+  --card-border: 36 18% 90%;
+
+  --sidebar: 38 28% 94%;
+  --sidebar-foreground: 30 18% 14%;
+  --sidebar-border: 36 18% 87%;
+  --sidebar-primary: 183 40% 32%;
+  --sidebar-primary-foreground: 40 35% 98%;
+  --sidebar-accent: 38 25% 90%;
+  --sidebar-accent-foreground: 30 18% 14%;
+  --sidebar-ring: 183 40% 32%;
+
+  --popover: 40 35% 98%;
+  --popover-foreground: 30 18% 14%;
+  --popover-border: 36 18% 87%;
+
+  /* Primary — muted teal (hospitable, ocean-touched) */
+  --primary: 183 42% 30%;            /* #2c7273 */
+  --primary-foreground: 40 35% 98%;
+
+  --secondary: 38 22% 90%;
+  --secondary-foreground: 30 18% 14%;
+  --muted: 38 22% 92%;
+  --muted-foreground: 30 8% 42%;
+  --accent: 38 25% 90%;
+  --accent-foreground: 30 18% 14%;
+  --destructive: 4 64% 52%;
+  --destructive-foreground: 40 35% 98%;
+  --input: 36 18% 80%;
+  --ring: 183 42% 30%;
+
+  /* Day colors for itinerary / map pins */
+  --day-1: 183 42% 38%;     /* teal */
+  --day-2: 18 70% 55%;      /* coral */
+  --day-3: 42 75% 50%;      /* gold */
+  --day-4: 268 35% 55%;     /* lavender */
+  --day-5: 145 30% 42%;     /* sage */
+  --day-6: 220 45% 55%;     /* sky blue */
+  --day-7: 340 50% 58%;     /* rose */
+
+  /* Charts (used by category bars) */
+  --chart-1: 183 42% 38%;
+  --chart-2: 18 70% 55%;
+  --chart-3: 42 75% 50%;
+  --chart-4: 268 35% 55%;
+  --chart-5: 145 30% 42%;
+
+  --font-sans: "General Sans", "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Satoshi", "General Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+
+  --radius: 1rem;
+
+  /* Soft, low-contrast iOS-feeling shadows */
+  --shadow-sm: 0 1px 2px hsl(30 18% 14% / 0.04);
+  --shadow: 0 2px 6px hsl(30 18% 14% / 0.05), 0 1px 2px hsl(30 18% 14% / 0.04);
+  --shadow-md: 0 4px 16px hsl(30 18% 14% / 0.06), 0 2px 4px hsl(30 18% 14% / 0.04);
+  --shadow-lg: 0 12px 32px hsl(30 18% 14% / 0.10), 0 4px 8px hsl(30 18% 14% / 0.05);
+  --shadow-xl: 0 24px 48px hsl(30 18% 14% / 0.14);
+  --shadow-2xl: 0 32px 64px hsl(30 18% 14% / 0.18);
+  --shadow-2xs: var(--shadow-sm);
+  --shadow-xs: var(--shadow-sm);
+
+  /* Compatibility fallback vars used by template button styles */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+}
+
+.dark {
+  --button-outline: rgba(255, 250, 240, 0.08);
+  --badge-outline: rgba(255, 250, 240, 0.05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255, 250, 240, 0.04);
+  --elevate-2: rgba(255, 250, 240, 0.09);
+
+  --background: 30 12% 9%;            /* near-black warm */
+  --foreground: 40 25% 92%;
+  --border: 30 8% 20%;
+  --card: 30 11% 12%;
+  --card-foreground: 40 25% 92%;
+  --card-border: 30 8% 18%;
+
+  --sidebar: 30 11% 11%;
+  --sidebar-foreground: 40 25% 92%;
+  --sidebar-border: 30 8% 18%;
+  --sidebar-primary: 183 38% 52%;
+  --sidebar-primary-foreground: 30 12% 9%;
+  --sidebar-accent: 30 8% 18%;
+  --sidebar-accent-foreground: 40 25% 92%;
+  --sidebar-ring: 183 38% 52%;
+
+  --popover: 30 11% 14%;
+  --popover-foreground: 40 25% 92%;
+  --popover-border: 30 8% 22%;
+
+  --primary: 183 38% 52%;             /* lighter teal in dark */
+  --primary-foreground: 30 12% 9%;
+
+  --secondary: 30 8% 18%;
+  --secondary-foreground: 40 25% 92%;
+  --muted: 30 8% 18%;
+  --muted-foreground: 40 8% 62%;
+  --accent: 30 8% 20%;
+  --accent-foreground: 40 25% 92%;
+  --destructive: 4 64% 60%;
+  --destructive-foreground: 40 25% 92%;
+  --input: 30 8% 30%;
+  --ring: 183 38% 52%;
+
+  --day-1: 183 38% 55%;
+  --day-2: 18 70% 65%;
+  --day-3: 42 75% 60%;
+  --day-4: 268 40% 70%;
+  --day-5: 145 30% 55%;
+  --day-6: 220 50% 65%;
+  --day-7: 340 55% 70%;
+
+  --chart-1: 183 38% 55%;
+  --chart-2: 18 70% 65%;
+  --chart-3: 42 75% 60%;
+  --chart-4: 268 40% 70%;
+  --chart-5: 145 30% 55%;
+
+  --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.4);
+  --shadow: 0 2px 6px hsl(0 0% 0% / 0.4), 0 1px 2px hsl(0 0% 0% / 0.5);
+  --shadow-md: 0 4px 16px hsl(0 0% 0% / 0.5);
+  --shadow-lg: 0 12px 32px hsl(0 0% 0% / 0.6);
+  --shadow-xl: 0 24px 48px hsl(0 0% 0% / 0.7);
+  --shadow-2xl: 0 32px 64px hsl(0 0% 0% / 0.8);
+  --shadow-2xs: var(--shadow-sm);
+  --shadow-xs: var(--shadow-sm);
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body {
+    @apply font-sans antialiased bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-feature-settings: "ss01", "ss02", "cv01";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
+}
+
+/* ── App shell helpers ─────────────────────────────── */
+
+@layer utilities {
+  /* iOS-feeling smooth tap */
+  .ios-tap {
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .ios-tap:active {
+    transform: scale(0.97);
+    opacity: 0.85;
+  }
+
+  /* Glassy iOS bottom bar */
+  .ios-blur {
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  /* Hide scrollbars on horizontal chip rows */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+
+  /* Smooth fade-in for tab transitions */
+  .tab-fade {
+    animation: tabFade 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes tabFade {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Day-color helpers for itinerary/map pins */
+  .day-bg-1 { background-color: hsl(var(--day-1)); }
+  .day-bg-2 { background-color: hsl(var(--day-2)); }
+  .day-bg-3 { background-color: hsl(var(--day-3)); }
+  .day-bg-4 { background-color: hsl(var(--day-4)); }
+  .day-bg-5 { background-color: hsl(var(--day-5)); }
+  .day-bg-6 { background-color: hsl(var(--day-6)); }
+  .day-bg-7 { background-color: hsl(var(--day-7)); }
+
+  .no-default-hover-elevate, .no-default-active-elevate {}
+
+  .toggle-elevate::before, .toggle-elevate-2::before {
+    content: ''; pointer-events: none; position: absolute; inset: 0;
+    border-radius: inherit; z-index: -1;
+  }
+  .toggle-elevate.toggle-elevated::before { background-color: var(--elevate-2); }
+  .border.toggle-elevate::before { inset: -1px; }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative; z-index: 0;
+  }
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: ''; pointer-events: none; position: absolute; inset: 0;
+    border-radius: inherit; z-index: 999;
+  }
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+  .border.hover-elevate::after,
+  .border.active-elevate::after,
+  .border.hover-elevate-2::after,
+  .border.active-elevate-2::after { inset: -1px; }
+}
+
+/* ── Leaflet tweaks for iOS look ─────────────────────────────── */
+.leaflet-container {
+  font-family: var(--font-sans);
+  background: hsl(var(--muted));
+}
+.leaflet-popup-content-wrapper {
+  border-radius: 14px !important;
+  box-shadow: var(--shadow-lg);
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  padding: 4px;
+}
+.leaflet-popup-content {
+  margin: 10px 14px !important;
+  font-size: 13px;
+}
+.leaflet-popup-tip {
+  background: hsl(var(--card)) !important;
+}
+.leaflet-control-zoom a {
+  background: hsl(var(--card)) !important;
+  color: hsl(var(--foreground)) !important;
+  border-color: hsl(var(--border)) !important;
+}

@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Env / secrets — do NOT commit
+.env
+.env.local
+.env.*.local
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Misc
+*.tsbuildinfo
+.cache/
+
+# Local SQLite
+*.sqlite
+*.db
+
+# Vite picks env from project root (per vite root setting)
+client/.env
+client/.env.local
+client/.env.*.local
