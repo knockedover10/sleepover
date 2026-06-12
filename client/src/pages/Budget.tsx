@@ -21,7 +21,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTr
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Plus, ArrowRight, Receipt, Trash2, Camera } from "lucide-react";
+import { Plus, ArrowRight, Receipt, Trash2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 function CategoryBars({ expenses, baseCurrency }: { expenses: ExpView[]; baseCurrency: string }) {
@@ -559,5 +559,3 @@ export default function Budget() {
   );
 }
 
-// silence unused warnings
-Camera;

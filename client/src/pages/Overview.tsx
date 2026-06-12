@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useTripData, formatMoney, daysUntil, formatDateShort, totalSpent, dayDateLabel } from "@/lib/trip-data";
 import { fetchWeather, type WeatherDay } from "@/lib/external";
@@ -290,5 +290,3 @@ export default function Overview() {
   );
 }
 
-// useEffect placeholder for unused import lint
-useEffect;
