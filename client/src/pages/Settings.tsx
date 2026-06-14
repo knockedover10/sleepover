@@ -36,7 +36,7 @@ import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 
 export default function Settings() {
-  const { trip, travelers, currencies, me, itinerary } = useTripData();
+  const { trip, travelers, currencies, me, meRaw, itinerary } = useTripData();
   const [, navigate] = useLocation();
   const { toast } = useToast();
   const updateTrip = useUpdateTrip(trip?.id || null);
@@ -108,7 +108,7 @@ export default function Settings() {
   };
 
   const deleteTrip = async () => {
-    if (!me?.isMe || !trip) return;
+    if (!meRaw?.is_owner || !trip) return;
     if (!confirm(`Delete "${trip.name}" entirely? This cannot be undone.`)) return;
     setBusy("delete");
     try {
@@ -140,7 +140,7 @@ export default function Settings() {
     }
   };
 
-  const isOwner = !!me?.isMe;
+  const isOwner = !!meRaw?.is_owner;
 
   return (
     <PageContainer>

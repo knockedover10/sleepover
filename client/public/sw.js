@@ -1,12 +1,11 @@
 // Sleepover service worker — minimal offline shell + runtime caches
-const VERSION = "v1";
+const VERSION = "v2";
 const SHELL_CACHE = `sleepover-shell-${VERSION}`;
 const RUNTIME_CACHE = `sleepover-runtime-${VERSION}`;
 
 const SHELL_ASSETS = [
   "./",
   "./index.html",
-  "./manifest.json",
   "./favicon.ico",
   "./logo.svg",
   "./icons/icon-192.png",
